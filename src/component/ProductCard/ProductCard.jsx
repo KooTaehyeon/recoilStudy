@@ -59,6 +59,9 @@ const MaxLine1 = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+  height: 50px;
 `;
 const Button = styled.button`
   padding: 8px;

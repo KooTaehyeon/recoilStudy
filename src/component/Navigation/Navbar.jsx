@@ -1,17 +1,24 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { Logo } from "./../Logo";
-import logoElem from "../../assets/henry.jpg";
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { Logo } from './../Logo';
+import logoElem from '../../assets/henry.jpg';
 function Navbar() {
   return (
     <Header>
       <Wrapper>
-        <Link to={"/"} aria-label="홈으로 이동">
-          <Logo src={logoElem} alt="홈 아이콘"/>
+        <Link to={'/'} aria-label='홈으로 이동'>
+          <Logo src={logoElem} alt='홈 아이콘' />
         </Link>
         <Nav>
-          <Link to={"/"} aria-label="홈으로 이동">홈</Link>
-          <Link to={"/cart"} aria-label="장바구니로 이동">장바구니</Link>
+          <Link to={'/'} aria-label='홈으로 이동'>
+            홈
+          </Link>
+          <Link to={'/cart'} aria-label='장바구니로 이동'>
+            장바구니
+          </Link>
+          <Link to={'/post'} aria-label='상품추가로 이동'>
+            상품추가
+          </Link>
         </Nav>
       </Wrapper>
     </Header>

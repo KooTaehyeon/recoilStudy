@@ -6,7 +6,8 @@ import {
 } from '../recoil/CartAtom';
 import styled from 'styled-components';
 import CartItem from './../component/CartItem/CartItem';
-
+import { Suspense } from 'react';
+import Loading from '../component/lodang';
 function Cart() {
   // 전역 상태 관리 값 불러오기
   const cartItem = useRecoilValue(CartAtom);
@@ -18,15 +19,15 @@ function Cart() {
   return (
     <>
       <Heading>장바구니</Heading>
-
-      <ItemWrapper>
-        {cartItem.length ? (
-          cartItem.map((e) => <CartItem data={e} key={e.id} />)
-        ) : (
-          <NoItems>상품이 없습니다</NoItems>
-        )}
-      </ItemWrapper>
-
+      <Suspense fallback={<Loading />}>
+        <ItemWrapper>
+          {cartItem.length ? (
+            cartItem.map((e) => <CartItem data={e} key={e.id} />)
+          ) : (
+            <NoItems>상품이 없습니다</NoItems>
+          )}
+        </ItemWrapper>
+      </Suspense>
       <TotalPriceWrapper>
         <ColumnWrapper>
           <span>총 갯수</span>
