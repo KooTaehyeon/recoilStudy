@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Logo } from './../Logo';
-import logoElem from '../../assets/henry.jpg';
+import logoElem from '../../assets/henry.png';
 function Navbar() {
   return (
     <Header>

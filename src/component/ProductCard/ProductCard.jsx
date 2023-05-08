@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import dummyImage from '../../assets/henry.jpg';
+import dummyImage from '../../assets/henry.png';
 import { useRecoilState } from 'recoil';
 import { CartAtom } from '../../recoil/CartAtom';
 
@@ -33,7 +33,9 @@ const ProductCard = ({ data }) => {
       />
       <Price>{price.toLocaleString()}원</Price>
       <Haeding>{title}</Haeding>
-      <MaxLine1>{description}</MaxLine1>
+      <MaxLine1 dangerouslySetInnerHTML={{ __html: description }}>
+        {/* {description} */}
+      </MaxLine1>
       <Button onClick={AddToCart} disabled={isAlreadyInCart}>
         {isAlreadyInCart ? `장바구니에 추가됬습니다` : '장바구니에 추가'}
       </Button>
@@ -55,7 +57,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   cursor: pointer;
 `;
-const MaxLine1 = styled.p`
+const MaxLine1 = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

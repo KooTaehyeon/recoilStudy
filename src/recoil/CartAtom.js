@@ -1,12 +1,12 @@
-import { atom, selector } from "recoil";
+import { atom, selector } from 'recoil';
 
 export const CartAtom = atom({
-  key: "CartAtom",
+  key: 'CartAtom',
   default: [],
 });
 
 export const QuantitySelector = selector({
-  key: "QuantitySelector",
+  key: 'QuantitySelector',
   get: ({ get }) => {
     const CurrentItem = get(CartAtom);
     return CurrentItem.length.toLocaleString();
@@ -14,7 +14,7 @@ export const QuantitySelector = selector({
 });
 
 export const TotalPriceSelector = selector({
-  key: "TotlaPriceSelector",
+  key: 'TotlaPriceSelector',
   get: ({ get }) => {
     const CurrentItem = get(CartAtom);
     return CurrentItem.reduce(

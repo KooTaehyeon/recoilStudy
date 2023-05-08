@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import dummyImage from "../../assets/henry.jpg";
-import { useSetRecoilState } from "recoil";
-import { CartAtom } from "../../recoil/CartAtom";
+import React from 'react';
+import styled from 'styled-components';
+import dummyImage from '../../assets/henry.png';
+import { useSetRecoilState } from 'recoil';
+import { CartAtom } from '../../recoil/CartAtom';
 
 const CartItem = ({ data }) => {
   const setCartItem = useSetRecoilState(CartAtom);
@@ -56,7 +56,7 @@ const RightWrapper = styled.div`
   flex-direction: column;
   align-items: flex-end;
   gap: 8px;
-  > span {
+  span {
     text-align: right;
   }
 `;

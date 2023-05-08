@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useRecoilValue, useRecoilState } from 'recoil';
 import { ProductIdSelector, ProductAtom } from '../recoil/AllProduct';
 import ReactQuill from 'react-quill';
-
+import 'react-quill/dist/quill.snow.css';
 const CartPost = () => {
   const titleInputRef = useRef(null);
   const PriceInputRef = useRef(null);
@@ -147,25 +147,33 @@ const CartPost = () => {
         <textarea type='text' ref={contentInputRef} id={'content'} />
       </InputBox> */}
       <label htmlFor='description'>description</label>
-      <ReactQuill
-        ref={quillRef}
-        value={htmlContent}
-        onChange={setHtmlContent}
-        modules={modules}
-        formats={formats}
-        theme='snow'
-        style={{
-          width: '90%',
-          margin: '5px auto',
-          height: '200px',
-        }}
-      />
+      <QuillBox>
+        <ReactQuill
+          ref={quillRef}
+          value={htmlContent}
+          onChange={setHtmlContent}
+          modules={modules}
+          formats={formats}
+          theme='snow'
+          className='quill'
+        />
+      </QuillBox>
       <FormBtn>추가해주기</FormBtn>
     </Form>
   );
 };
 
 export default CartPost;
+const QuillBox = styled.div`
+  .quill {
+    margin: 5px auto;
+    height: 200px;
+    width: 90%;
+  }
+  svg {
+    width: 10px;
+  }
+`;
 
 const Form = styled.form`
   width: 80%;
