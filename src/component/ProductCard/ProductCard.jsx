@@ -1,13 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import dummyImage from '../../assets/henry.png';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useSetRecoilState } from 'recoil';
+import { useNavigate } from 'react-router-dom';
 import { CartAtom } from '../../recoil/CartAtom';
-
+import { CardAtom } from '../../recoil/CardDetail';
 const ProductCard = ({ data }) => {
   // 구조분해할당을 통해 data.id, data.title 대신 간단하게 사용
   const { id, title, description, price } = data;
-
+  // 디테일 페이지 데이터
+  const navigate = useNavigate();
+  const setCardItem = useSetRecoilState(CardAtom);
   // 아톰 불러오기
   const [cartItem, setCartItem] = useRecoilState(CartAtom);
 
@@ -22,9 +25,13 @@ const ProductCard = ({ data }) => {
       setCartItem((prev) => [...prev, data]);
     }
   };
+  const CardOnclick = () => {
+    setCardItem(data);
+    navigate('/detail');
+  };
 
   return (
-    <Wrapper>
+    <Wrapper onClick={CardOnclick}>
       <img
         width={276}
         height={276}
