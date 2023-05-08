@@ -17,8 +17,8 @@ yarn build 커맨드를 입력하면 빌드를 진행합니다
 # Tools
 
 **프레임워크/라이브러리**<br>
-<img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/> <img src="https://img.shields.io/badge/React_router-CA4245?style=flat-square&logo=react-router&logoColor=white"/><br>
-<img src='https://quilljs.com/'>
+<img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/> <img src="https://img.shields.io/badge/React_router-CA4245?style=flat-square&logo=react-router&logoColor=white"/> react-Quill<br>
+
 **스타일링**<br>
 <img src="https://img.shields.io/badge/emotion-DB7093?style=flat-square&logo=styled-components&logoColor=white"/><br>
 
