@@ -3,9 +3,13 @@ import ProductCard from './../component/ProductCard/ProductCard';
 
 import { useRecoilValue } from 'recoil';
 import { ProductAtom } from '../recoil/AllProduct';
+import { useEffect } from 'react';
 function Main() {
   const dummy = useRecoilValue(ProductAtom);
   console.log(dummy);
+  useEffect(() => {
+    localStorage.removeItem('reCoil');
+  }, []);
   return (
     <ListWrapper>
       {dummy.map((e) => {

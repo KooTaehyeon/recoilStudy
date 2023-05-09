@@ -4,9 +4,11 @@ import { useRecoilValue, useRecoilState } from 'recoil';
 import { ProductIdSelector, ProductAtom } from '../recoil/AllProduct';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import { useNavigate } from 'react-router';
 const CartPost = () => {
   const titleInputRef = useRef(null);
   const PriceInputRef = useRef(null);
+  const navigate = useNavigate();
   // const contentInputRef = useRef(null);
   const [addProduct, setAddProduct] = useRecoilState(ProductAtom);
   const id = useRecoilValue(ProductIdSelector); // id값
@@ -36,6 +38,7 @@ const CartPost = () => {
     };
 
     setAddProduct((prev) => [...prev, Data]);
+    navigate('/');
   }
   console.log(addProduct);
 
@@ -91,15 +94,18 @@ const CartPost = () => {
         // 툴바에 넣을 기능들을 순서대로 나열하면 된다.
         container: [
           ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-          [{ size: ['small', false, 'large', 'huge'] }, { color: [] }],
+          [
+            { size: ['small', false, 'large', 'huge'] },
+            { color: ['red', 'blue', 'brown'] },
+          ],
           [
             { list: 'ordered' },
             { list: 'bullet' },
             { indent: '-1' },
             { indent: '+1' },
-            { align: [] },
+            // { align: [] },
           ],
-          ['image', 'video'],
+          // ['image', 'video'],
         ],
         handlers: {
           // 위에서 만든 이미지 핸들러 사용하도록 설정
@@ -123,9 +129,9 @@ const CartPost = () => {
     'bullet',
     'indent',
     'link',
-    'image',
-    'video',
-    'align',
+    // 'image',
+    // 'video',
+    // 'align',
     'color',
     'background',
   ];
@@ -170,9 +176,9 @@ const QuillBox = styled.div`
     height: 200px;
     width: 90%;
   }
-  svg {
+  /* svg {
     width: 10px;
-  }
+  } */
 `;
 
 const Form = styled.form`

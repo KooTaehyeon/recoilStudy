@@ -31,8 +31,9 @@ const ProductCard = ({ data }) => {
   };
 
   return (
-    <Wrapper onClick={CardOnclick}>
+    <Wrapper>
       <img
+        onClick={CardOnclick}
         width={276}
         height={276}
         src={dummyImage}
@@ -62,7 +63,10 @@ const Wrapper = styled.div`
   border: 1px solid var(--line-gray);
   display: flex;
   flex-direction: column;
-  cursor: pointer;
+
+  img {
+    cursor: pointer;
+  }
 `;
 const MaxLine1 = styled.div`
   overflow: hidden;
