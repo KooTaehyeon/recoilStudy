@@ -26,6 +26,6 @@ https://recoil-study.vercel.app/
 
 **스타일링**<br>
 
-<img src="https://img.shields.io/badge/styled_components?style=flat-square&logo=React&logoColor=white"/>
+<img src="https://img.shields.io/badge/styled_components-CA4233??style=flat-square&logo=React&logoColor=white"/>
 **상태관리**<br>
 <img src="https://img.shields.io/badge/Recoil-5466FB?style=flat-square&logo=react&logoColor=white"/> <br>
