@@ -21,11 +21,11 @@ https://recoil-study.vercel.app/
 
 **프레임워크/라이브러리**<br>
 <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/> <img src="https://img.shields.io/badge/React_router-CA4245?style=flat-square&logo=react-router&logoColor=white"/> 
-<img  src="https://img.shields.io/badge/react-Quill-CA4243?style=flat-square&logo=react-router&logoColor=white"/> 
+<img  src="https://img.shields.io/badge/react_Quill-CA4243?style=flat-square&logo=react-router&logoColor=white"/> 
 <br>
 
 **스타일링**<br>
 
-<img src="https://img.shields.io/badge/styled-components?style=flat-square&logo=React&logoColor=white"/>
+<img src="https://img.shields.io/badge/styled_components?style=flat-square&logo=React&logoColor=white"/>
 **상태관리**<br>
 <img src="https://img.shields.io/badge/Recoil-5466FB?style=flat-square&logo=react&logoColor=white"/> <br>
