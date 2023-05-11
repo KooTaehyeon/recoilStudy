@@ -21,7 +21,7 @@ https://recoil-study.vercel.app/
 
 **프레임워크/라이브러리**<br>
 <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/> <img src="https://img.shields.io/badge/React_router-CA4245?style=flat-square&logo=react-router&logoColor=white"/> 
-src="https://img.shields.io/badge/react-Quill-CA4243?style=flat-square&logo=react-router&logoColor=white"/> 
+<img  src="https://img.shields.io/badge/react-Quill-CA4243?style=flat-square&logo=react-router&logoColor=white"/> 
 <br>
 
 **스타일링**<br>
