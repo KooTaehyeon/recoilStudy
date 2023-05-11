@@ -9,6 +9,7 @@ function Main() {
   console.log(dummy);
   useEffect(() => {
     localStorage.removeItem('reCoil');
+    localStorage.removeItem('Cart');
   }, []);
   return (
     <ListWrapper>
