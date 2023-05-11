@@ -27,7 +27,6 @@ const CardDetail = () => {
     // 2-3. 더 이상 쓰이지 않지만, chrome 설정상 필요하다고 하여 추가함.
     // 2-4. returnValue가 true일 경우 이벤트는 그대로 실행되고, false일 경우 실행되지 않는다고 한다.
   };
-  console.log(Card, 'card');
   // 브라우저에 렌더링 시 한 번만 실행하는 코드
   useEffect(() => {
     (() => {

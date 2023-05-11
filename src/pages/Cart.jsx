@@ -1,4 +1,4 @@
-import { useRecoilValue } from 'recoil';
+import { useRecoilValue, useRecoilState } from 'recoil';
 import {
   CartAtom,
   QuantitySelector,
@@ -6,16 +6,42 @@ import {
 } from '../recoil/CartAtom';
 import styled from 'styled-components';
 import CartItem from './../component/CartItem/CartItem';
-import { Suspense } from 'react';
-import Loading from '../component/lodang';
+import { Suspense, useEffect } from 'react';
+import Loading from '../component/loading';
 function Cart() {
   // 전역 상태 관리 값 불러오기
-  const cartItem = useRecoilValue(CartAtom);
+  const [cartItem, setCartItem] = useRecoilState(CartAtom);
   console.log(cartItem, 'cartItem');
   // 파생 데이터 selector 가져오기1
   const TotalQuantity = useRecoilValue(QuantitySelector);
   // 파생 데이터 selector 가져오기2
   const TotalPrice = useRecoilValue(TotalPriceSelector);
+
+  useEffect(() => {
+    if (!cartItem.id) {
+      const LocalData = JSON.parse(localStorage.getItem('Cart'));
+      if (!LocalData) return;
+      console.log(LocalData, 'LocalData');
+      setCartItem(LocalData);
+    }
+  }, [cartItem.id, setCartItem]);
+
+  const preventClose = (e) => {
+    e.preventDefault();
+    localStorage.setItem('Cart', JSON.stringify(cartItem));
+
+    e.returnValue = '';
+  };
+  // 브라우저에 렌더링 시 한 번만 실행하는 코드
+  useEffect(() => {
+    (() => {
+      window.addEventListener('beforeunload', preventClose);
+    })();
+    return () => {
+      window.removeEventListener('beforeunload', preventClose);
+    };
+  });
+
   return (
     <>
       <Heading>장바구니</Heading>
