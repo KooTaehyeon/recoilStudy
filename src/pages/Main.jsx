@@ -29,6 +29,7 @@ const ListWrapper = styled.ul`
   flex-wrap: wrap;
   justify-content: center;
   gap: 8px;
+  list-style-type: none;
 `;
 
 export default Main;

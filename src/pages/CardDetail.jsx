@@ -47,7 +47,9 @@ const CardDetail = () => {
       <Wrapper>
         <div>{Card.title}</div>
         <div>Price: {Card.price}</div>
-        <div dangerouslySetInnerHTML={{ __html: Card.description }}></div>
+        <QuillBox
+          dangerouslySetInnerHTML={{ __html: Card.description }}
+        ></QuillBox>
       </Wrapper>
       <Button onClick={() => navigate(-1)}>뒤로가기</Button>
     </>
@@ -81,6 +83,19 @@ const Button = styled.button`
   position: relative;
   background-color: var(--main);
   &:hover {
+  }
+`;
+const QuillBox = styled.div`
+  ol {
+    list-style-type: lower-alpha;
+    padding: 5px 20px;
+  }
+
+  .ql-align-center {
+    text-align: center;
+  }
+  .ql-align-right {
+    text-align: left;
   }
 `;
 export default CardDetail;

@@ -13,7 +13,7 @@ const CartPost = () => {
   const [addProduct, setAddProduct] = useRecoilState(ProductAtom);
   const id = useRecoilValue(ProductIdSelector); // id값
   const [htmlContent, setHtmlContent] = useState(''); //🌈
-
+  console.log(htmlContent, 'htmlContent');
   const quillRef = useRef(); //🌈
   function submitHandler(e) {
     e.preventDefault();
@@ -80,7 +80,7 @@ const CartPost = () => {
       quill.setSelection(range, 1);
       /* 사용자 선택을 지정된 범위로 설정하여 에디터에 포커싱할 수 있다. 
              위치 인덱스와 길이를 넣어주면 된다.*/
-      console.log(range, 'range');
+
       // quill.clipboard.dangerouslyPasteHTML(
       //   range,
       //   `<img src=${url} alt="image" />`
@@ -93,9 +93,10 @@ const CartPost = () => {
       toolbar: {
         // 툴바에 넣을 기능들을 순서대로 나열하면 된다.
         container: [
+          [{ header: [1, 2, false] }],
           ['bold', 'italic', 'underline', 'strike', 'blockquote'],
           [
-            { size: ['small', false, 'large', 'huge'] },
+            // { size: [] },
             { color: ['red', 'blue', 'brown'] },
           ],
           [
@@ -103,9 +104,10 @@ const CartPost = () => {
             { list: 'bullet' },
             { indent: '-1' },
             { indent: '+1' },
-            // { align: [] },
+            { align: [] },
           ],
           // ['image', 'video'],
+          // ['clean'],
         ],
         handlers: {
           // 위에서 만든 이미지 핸들러 사용하도록 설정
@@ -116,6 +118,7 @@ const CartPost = () => {
     [imageHandler]
   );
   const formats = [
+    'header',
     'font',
     'header',
     'bold',
@@ -131,7 +134,7 @@ const CartPost = () => {
     'link',
     // 'image',
     // 'video',
-    // 'align',
+    'align',
     'color',
     'background',
   ];

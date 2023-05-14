@@ -74,7 +74,11 @@ const MaxLine1 = styled.div`
   white-space: nowrap;
   box-sizing: border-box;
   white-space: pre-wrap;
-  height: 50px;
+  min-height: 50px;
+  height: auto;
+  * {
+    font-size: inherit;
+  }
 `;
 const Button = styled.button`
   padding: 8px;
