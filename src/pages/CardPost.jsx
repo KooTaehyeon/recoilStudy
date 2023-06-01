@@ -13,22 +13,19 @@ const CartPost = () => {
   const [addProduct, setAddProduct] = useRecoilState(ProductAtom);
   const id = useRecoilValue(ProductIdSelector); // id값
   const [htmlContent, setHtmlContent] = useState(''); //🌈
-  console.log(htmlContent, 'htmlContent');
   const quillRef = useRef(); //🌈
   function submitHandler(e) {
     e.preventDefault();
-
     const description = quillRef.current.getEditor().getText(); //태그를 제외한 순수 text만을 받아온다. 검색기능을 구현하지 않을 거라면 굳이 text만 따로 저장할 필요는 없다.
     // const htmlDescription = quillRef.current.getEditor().getHTML();
     if (description.trim() === '') {
       alert('내용을 입력해주세요.');
       return;
     }
-    console.log(description);
-    // console.log(description, 'htmlDescription');
     const enteredTitle = titleInputRef.current.value;
     const enteredPriceInput = PriceInputRef.current.value;
     // const enteredContent = contentInputRef.current.value;
+    console.log(Number(enteredPriceInput));
 
     const Data = {
       id: id + 1,
@@ -36,7 +33,6 @@ const CartPost = () => {
       title: enteredTitle,
       description: htmlContent,
     };
-
     setAddProduct((prev) => [...prev, Data]);
     navigate('/');
   }
@@ -148,7 +144,7 @@ const CartPost = () => {
       <InputBox>
         <label htmlFor='Price'>Price</label>
         <br />
-        <input type='text' ref={PriceInputRef} id={'price'} />
+        <input type='number' ref={PriceInputRef} id={'price'} />
       </InputBox>
       {/* <InputBox>
         <label htmlFor='title'>content</label>
