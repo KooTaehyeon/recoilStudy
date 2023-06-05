@@ -25,7 +25,6 @@ const CartPost = () => {
     const enteredTitle = titleInputRef.current.value;
     const enteredPriceInput = PriceInputRef.current.value;
     // const enteredContent = contentInputRef.current.value;
-    console.log(Number(enteredPriceInput));
 
     const Data = {
       id: id + 1,
@@ -33,6 +32,9 @@ const CartPost = () => {
       title: enteredTitle,
       description: htmlContent,
     };
+    if (isNaN(Data.price)) {
+      return alert('숫자만 입력해주세요');
+    }
     setAddProduct((prev) => [...prev, Data]);
     navigate('/');
   }
@@ -144,7 +146,7 @@ const CartPost = () => {
       <InputBox>
         <label htmlFor='Price'>Price</label>
         <br />
-        <input type='number' ref={PriceInputRef} id={'price'} />
+        <input type='text' ref={PriceInputRef} id={'price'} />
       </InputBox>
       {/* <InputBox>
         <label htmlFor='title'>content</label>
